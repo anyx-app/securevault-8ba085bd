@@ -1,160 +1,33 @@
 <!doctype html>
 <html lang="en">
-
-<head>
-  <script>
-    (() => {
-      try {
-        const saved = localStorage.getItem('theme');
-        const systemDark = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches;
-        const theme = saved || (systemDark ? 'dark' : 'light');
-        document.documentElement.dataset.theme = theme;
-      } catch { }
-    })();
-  </script>
-  <meta charset="UTF-8" />
-  
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-
-  <!-- Primary Meta Tags -->
-
-  <!-- Open Graph / Facebook -->
-
-  <!-- Twitter -->
-
-  <style>
-    :root {
-      --anyx-badge-display: block;
-    }
-
-    .anyx-badge {
-      position: fixed;
-      right: calc(16px + env(safe-area-inset-right));
-      bottom: calc(16px + env(safe-area-inset-bottom));
-      z-index: 9999;
-      display: var(--anyx-badge-display, block);
-    }
-
-    .anyx-badge__link {
-      display: inline-flex;
-      align-items: center;
-      gap: 8px;
-      height: 36px;
-      padding: 0 12px;
-      border-radius: 9999px;
-      background: #000;
-      color: #fff;
-      border: 1px solid rgba(255, 255, 255, 0.08);
-      box-shadow: 0 6px 24px rgba(0, 0, 0, 0.35);
-      text-decoration: none;
-      transform: translateZ(0);
-      transition: transform 160ms ease, background-color 160ms ease;
-      font-weight: 600;
-      font-size: 13px;
-      line-height: 1;
-    }
-
-    .anyx-badge__link:hover {
-      transform: scale(1.03);
-      background: #0a0a0a;
-    }
-
-    .anyx-badge__link:focus-visible {
-      outline: 2px solid #7dd3fc;
-      outline-offset: 2px;
-    }
-
-    .anyx-badge__logo {
-      width: 20px;
-      height: 20px;
-      border-radius: 6px;
-      display: block;
-    }
-
-    .anyx-badge__close {
-      position: absolute;
-      top: -6px;
-      right: -6px;
-      width: 18px;
-      height: 18px;
-      border-radius: 9999px;
-      background: #000;
-      color: #fff;
-      border: 1px solid rgba(255, 255, 255, 0.18);
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-      font-size: 12px;
-      line-height: 1;
-      cursor: pointer;
-      box-shadow: 0 6px 16px rgba(0, 0, 0, 0.35);
-    }
-
-    .anyx-badge__close:hover {
-      background: #0a0a0a;
-    }
-
-    .anyx-badge__close:focus-visible {
-      outline: 2px solid #7dd3fc;
-      outline-offset: 2px;
-    }
-
-    @media (prefers-reduced-motion: reduce) {
-      .anyx-badge__link {
-        transition: none;
-      }
-    }
-  </style>
-
-    <!-- Primary Meta Tags -->
-    <title>securevault-8ba085bd</title>
-    <meta name="title" content="securevault-8ba085bd" />
-    <meta name="description" content="Built with Anyx.app" />
-    <meta name="theme-color" content="#6366f1" />
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     
-    <!-- Favicon -->
-    <link rel="icon" type="image/png" href="https://anyx.dev/anyx-logo.png" />
-    
-    <!-- Open Graph / Facebook / LinkedIn -->
+    <!-- SEO & Branding -->
+    <title>SecureVault: Your credentials, safely managed.</title>
+    <meta name="description" content="SecureVault is the ultimate password management solution designed for businesses and teams. Encrypted vaults, role-based access control, and comprehensive audit logs." />
+    <meta name="keywords" content="password manager, secure vault, team security, encryption, role-based access, business password management" />
+    <meta name="theme-color" content="#4A90E2" />
+
+    <!-- Open Graph / Facebook -->
     <meta property="og:type" content="website" />
-    <meta property="og:url" content="https://securevault-dleipm9iw.anyx.dev" />
-    <meta property="og:title" content="securevault-8ba085bd" />
-    <meta property="og:description" content="Built with Anyx.app" />
-    <meta property="og:image" content="https://idwpnaqwvyswfxflwvds.supabase.co/storage/v1/object/public/project-previews/8ba085bd-3860-49c7-86a1-f675e20f4138/preview_20260203T161934Z.webp" />
-    <meta property="og:image:width" content="1200" />
-    <meta property="og:image:height" content="630" />
-    
+    <meta property="og:url" content="https://securevault.app/" />
+    <meta property="og:title" content="SecureVault: Your credentials, safely managed." />
+    <meta property="og:description" content="SecureVault is the ultimate password management solution designed for businesses and teams." />
+    <meta property="og:image" content="https://securevault.app/og-image.jpg" />
+
     <!-- Twitter -->
     <meta property="twitter:card" content="summary_large_image" />
-    <meta property="twitter:url" content="https://securevault-dleipm9iw.anyx.dev" />
-    <meta property="twitter:title" content="securevault-8ba085bd" />
-    <meta property="twitter:description" content="Built with Anyx.app" />
-    <meta property="twitter:image" content="https://idwpnaqwvyswfxflwvds.supabase.co/storage/v1/object/public/project-previews/8ba085bd-3860-49c7-86a1-f675e20f4138/preview_20260203T161934Z.webp" />
+    <meta property="twitter:url" content="https://securevault.app/" />
+    <meta property="twitter:title" content="SecureVault: Your credentials, safely managed." />
+    <meta property="twitter:description" content="SecureVault is the ultimate password management solution designed for businesses and teams." />
+    <meta property="twitter:image" content="https://securevault.app/og-image.jpg" />
+
   </head>
-
-<body>
-  <div id="root"></div>
-  <div class="anyx-badge">
-    <a class="anyx-badge__link" href="https://anyx.app" target="_blank" rel="noopener noreferrer"
-      aria-label="Built with Anyx">
-      <img class="anyx-badge__logo" src="/anyx-logo.png" alt="" aria-hidden="true" />
-      <span class="anyx-badge__text">Built with Anyx</span>
-    </a>
-    <button class="anyx-badge__close" type="button" aria-label="Hide Anyx badge">×</button>
-  </div>
-  <script type="module" src="/src/main.tsx"></script>
-  <script>
-    (function () {
-      var closeBtn = document.querySelector('.anyx-badge__close');
-      if (closeBtn) {
-        closeBtn.addEventListener('click', function (ev) {
-          ev.preventDefault();
-          var container = document.querySelector('.anyx-badge');
-          if (container) container.style.display = 'none';
-        });
-      }
-    })();
-  </script>
-</body>
-
+  <body>
+    <div id="root"></div>
+    <script type="module" src="/src/main.tsx"></script>
+  </body>
 </html>
